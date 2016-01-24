@@ -387,10 +387,10 @@ jQuery(window).load(function(){
 	//Full screen slideshows or images - backstretch
 	jQuery(".home-section .home-full-screen").backstretch([
 	
-		"http://placehold.it/1200x800",
-		"http://placehold.it/1200x800/ffffff/111111",
-		"http://placehold.it/1200x800",
-		"http://placehold.it/1200x800/ffffff/111111"
+		"http://localhost:3000/images/home/IMG_7674.jpg",
+		"http://localhost:3000/images/home/IMG_7710.jpg",
+		"http://localhost:3000/images/home/IMG_7776.jpg",
+		"http://localhost:3000/images/home/IMG_9947.jpg"
 		
 	], {duration: 3000, fade: 750});
 	

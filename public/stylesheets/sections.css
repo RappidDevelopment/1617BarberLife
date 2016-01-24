@@ -12,7 +12,7 @@
 }
 
 .home-full-screen .icon:hover {
-    color: #F07057;
+    color: #008500;
     -webkit-transition: all .1s linear 0;
     -moz-transition: all .1s linear 0;
     -o-transition: all .1s linear 0;
@@ -35,8 +35,8 @@
     display: block;
     background: url('../images/patterns/black-80.png');
     line-height: 130px;
-    border-left: 2px solid #F07057;
-    border-right: 2px solid #F07057;
+    border-left: 2px solid #008500;
+    border-right: 2px solid #008500;
     margin: 0;
     padding: 0;
 }
@@ -44,7 +44,7 @@
 .intro-text h3 {
     font-family: 'LeagueGothicRegular','Helvetica Neue',Helvetica,Arial,Sans-Serif;
     font-size: 30px;
-    background: #F07057;
+    background: #008500;
     display: inline-block;
     line-height: 35px;
     border: 0;

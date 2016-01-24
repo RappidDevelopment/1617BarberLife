@@ -10,9 +10,9 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Swag</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<title>1617 Barber Shop &amp; Beauty Salon</title>
+	<meta name="description" content="1617's Barbers and Stylists bring you the ultimate experience in OLD school professionalism with NEW school flavor">
+	<meta name="author" content="Rappid Development LLC">
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -29,7 +29,7 @@
   ================================================== -->
 
 	<link rel="stylesheet" href="stylesheets/base.css">
-    <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
 
    <!-- Modernizr
   ================================================== -->
@@ -39,126 +39,92 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <!-- preloader -->
 <div id="preloader">
     <div id="status">&nbsp;</div>
 </div><!-- /preloader -->
 
 <div id="main-wrapper">
-
-				<!-- main navigation -->
-				<div class="menusurround">
+  <!-- main navigation -->
+  <div class="menusurround">
               
-                    	<nav id="menu" class="menu">
-                			<ul id="mainnav" class="level-1 slide-nav">
+    <nav id="menu" class="menu">
+        <ul id="mainnav" class="level-1 slide-nav">
+            <li class="no-subnav">
+							<a href="#home-marker">Home</a>
+            </li>         
+						<li class="no-subnav">
+        					<a href="#about-marker">About</a>
+       			</li>                
+						<li class="no-subnav">
+    					<a href="#services-marker">Services</a>
+    				</li>
+            <li class="no-subnav">
+              <a href="#services-marker">Specials</a>
+            </li>
+            <li class="no-subnav">
+							<a href="#staff-marker">The Staff</a>
+						</li> 
+            <li class="has-subnav">
+              <a href="#blog-marker">News</a>
+                <ul class="level-2">
+                  <li><a href="#blog-marker">Blog on Homepage</a></li>
+                  <li><a href="blog.html">Full Blog</a></li>
+                  <li><a href="blog-single.html">Single Article</a></li>
+                </ul>
+            </li>          					
+            <li class="no-subnav">
+            	<a href="#contact-marker">Contact</a>
+            </li>
+				</ul>
+    </nav>
+    <!-- end menu --> 	
+    <!-- add logo --> 
+    <a href="#">
+   	  <img alt="logo" src="images/1617-Logo_Small.png" width="215" height="76">
+   	</a>
+    <!-- end logo -->       
+  </div><!-- /main navigation --> 
 
-                				<li class="has-subnav">
-									<a href="#home-marker">Home</a>
-                    					<ul class="level-2">
-					  						<li><a href="index-background.html">Background Slider</a></li>
-                      						<li><a href="index-camera.html">Camera Slider</a></li>
-                      						<li><a href="index.html">Revolution Slider</a></li>
-                      						<li><a href="index-parallax1.html">Parallax Intro 1</a></li>
-                                            <li><a href="index-parallax2.html">Parallax Intro 2</a></li>
-                                            <li><a href="index-parallax3.html">Parallax Intro 3</a></li>
-                                            <li><a href="index-parallax4.html">Parallax Intro 4</a></li>
-                                            <li><a href="index-parallax5.html">Newsletter Signup Intro</a></li>
-                    					</ul>
-                				</li>
-                
-        						<li class="has-subnav">
-                					<a href="#about-marker">About</a>
-                						<ul class="level-2">
-					  						<li><a href="#about-marker">About on Homepage</a></li>
-                      						<li><a href="elements.html">Elements / Typography</a></li>
-                    					</ul>
-               					</li>
-                
-        						<li class="no-subnav">
-                					<a href="#services-marker">Services</a>
-                				</li>
-				
-                				<li class="no-subnav">
-									<a href="#staff-marker">The Team</a>
-								</li>
-				
-								<li class="has-subnav">
-									<a href="#portfolio-marker">Our Work</a>
-                    					<ul class="level-2">
-					  						<li><a href="#portfolio-marker">Work on Homepage</a></li>
-                      						<li><a href="project-single.html">Single Project</a></li>
-                    					</ul>
-								</li>
-                
-               					<li class="has-subnav">
-               						<a href="#blog-marker">Blog</a>
-										<ul class="level-2">
-					  						<li><a href="#blog-marker">Blog on Homepage</a></li>
-                      						<li><a href="blog.html">Full Blog</a></li>
-                      						<li><a href="blog-single.html">Single Article</a></li>
-                    					</ul>
-                				</li>
-               					
-                                <li class="no-subnav">
-                                	<a href="#contact-marker">Contact</a>
-                                </li>
-
-							</ul>
-            			</nav>
-            		<!-- end menu --> 	
-                    <!-- add logo --> 
-                   <a href="#">
-                   	 <div class="logo-text">Swag<span>.</span></div>
-                   	</a>
-                    <!-- end logo --> 
-                    
-                </div><!-- /main navigation --> 
-
+  <!-- 
+        /*** 
+          HOME SECTION 
+        ****/ 
+  -->
 	<a id="home-marker" class="anchor"></a>
     
-    <!-- Home Section - Background Slider
-      ================================================== -->
-      	<section id="home-section" class="section-wrapper home-section very-top-padding">
-        		<div class="home-full-screen"><!-- full screen slider applied here -->
-        			<div class="background-inner3 black10"><!-- add background color css to this div -->
-        				<div class="section-inner overlay1-20"><!-- add background pattern css to this div -->
-        					<div class="container">
-                    			<!-- intro text -->
-                    			<div class="intro-text">
-            						<h2>Welcome!</h2>
-            						<h3>We are Swag, a group of talented creative proffesionals.</h3>
-                    			</div><!-- intro text -->
-            
-        					</div><!-- /container -->
-        
-        					<!-- social icons -->			
-							<section class="container">
-                    			<div class="sixteen columns text-center">
-                     				<a href="#"><i class="icon-twitter-circled icon"></i></a>
-                        			<a href="#"><i class="icon-gplus-circled icon"></i></a>
-                        			<a href="#"><i class="icon-pinterest-circled icon"></i></a>
-                        			<a href="#"><i class="icon-github-circled icon"></i></a>
-                        			<a href="#"><i class="icon-flickr-circled icon"></i></a>
-                        			<a href="#"><i class="icon-vimeo-circled icon"></i></a>
-                       			</div> 
-							</section><!-- /social icons -->	 
-                    </div><!-- /section-inner -->
-            	</div><!-- /background color css -->
-        	</div><!-- /full screen slider -->
-		</section>
+  <!-- Home Section - Background Slider
+  ================================================== -->
+  <section id="home-section" class="section-wrapper home-section very-top-padding">
+    <div class="home-full-screen"><!-- full screen slider applied here -->
+      <div class="background-inner3 black10"><!-- add background color css to this div -->
+        <div class="section-inner overlay1-20"><!-- add background pattern css to this div -->
+        <div class="container">
+          <!-- intro text -->
+          <div class="intro-text">
+            <h2>Welcome! - Home of the $10 cut!</h2>
+            <h3>We bring you the ultimate experience in OLD school professionalism with NEW school flavor</h3>
+          </div><!-- intro text -->
+
+        </div><!-- /container -->
+
+          <!-- social icons -->			
+          <section class="container">
+            <div class="sixteen columns text-center">
+              <a href="https://twitter.com/1617BarberLife"><i class="icon-twitter icon"></i></a>
+              <a href="https://www.facebook.com/1617BarberLife/"><i class="icon-facebook icon"></i></a>
+              <a href="https://www.instagram.com/1617barber_life/"><i class="icon-instagram icon"></i></a>
+              <a href="https://plus.google.com/+1617BarberSalonBeautyShopPhiladelphia/posts"><i class="icon-gplus icon"></i></a>
+              <a href="http://www.yelp.com/biz/1617-barber-shop-and-beauty-salon-philadelphia"><i class="icon-location icon"></i></a>
+            </div> 
+          </section><!-- /social icons -->	 
+        </div><!-- /section-inner -->
+      </div><!-- /background color css -->
+    </div><!-- /full screen slider -->
+  </section>
     <!-- End Home Section - Background Slider
       ================================================== --> 
       
-      
-
 	<a id="about-marker" class="anchor"></a>
        
     <!-- About Section
