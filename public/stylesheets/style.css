@@ -120,6 +120,15 @@ a:hover {
 	color:#181818;  
 }
 
+.intro-text a,  a:visited { 
+    color:#fff; 
+    text-decoration:none;
+}
+
+.intro-text a:hover {
+    text-decoration:underline;
+}
+
 img { 
 	max-width:100% 
 }
@@ -313,9 +322,8 @@ div.dashed {
 	font-family: 'ChunkFiveRegular', Arial, sans-serif; 
 	color:#181818; 
 	text-align:center; 
-	padding-bottom:70px; 
-	background:url(../images/ornamental-sm.png) bottom center no-repeat; 
-	margin-bottom:15px; 
+	padding-bottom:10px; 
+	margin-bottom:5px; 
 	margin-top:0px  
 }
 
@@ -326,7 +334,6 @@ only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (-o-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
 .section-title { 
-	background:url(../images/ornamental-lg.png) bottom center no-repeat; 
 	background-size: 124px 67px; 
 	 
 } 
@@ -2033,7 +2040,7 @@ div.port-item-container:hover .zoom {
   font-size: 20px;
   text-shadow: none;
   color: #fff;
-  background: #000;
+  background: #008500;
   background: rgba(0,0,0, .8);
   left: 0;
   right: 0;

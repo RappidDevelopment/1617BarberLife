@@ -387,11 +387,10 @@ jQuery(window).load(function(){
 	//Full screen slideshows or images - backstretch
 	jQuery(".home-section .home-full-screen").backstretch([
 	
-		"http://localhost:3000/images/home/IMG_7674.jpg",
-		"http://localhost:3000/images/home/IMG_7710.jpg",
-		"http://localhost:3000/images/home/IMG_7776.jpg",
-		"http://localhost:3000/images/home/IMG_9947.jpg"
-		
+		"http://localhost:3000/images/home/1.jpg",
+		"http://localhost:3000/images/home/2.jpg",
+		"http://localhost:3000/images/home/3.jpg",
+		"http://localhost:3000/images/home/4.jpg"
 	], {duration: 3000, fade: 750});
 	
 	jQuery(".twitter-section").backstretch([

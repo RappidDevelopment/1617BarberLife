@@ -354,7 +354,7 @@ website:   	http://www.themepunch.com
   letter-spacing: 1px;	
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 			font-family:'LeagueGothicRegular','Helvetica Neue',Helvetica,Arial,Sans-Serif;
-      		background:#000
+      		background: #008500;
 }
 .lt-ie9 .tp-caption.very_large_text_league{
 			position: absolute; 
@@ -376,7 +376,7 @@ website:   	http://www.themepunch.com
 }
 .tp-caption.modern_medium_fat_black_on_white{
 			position: absolute; 
-			color: #000; 
+			color: #008500; 
       background:#fff;
 			text-shadow: none; 
 			font-weight: 800; 
@@ -393,7 +393,7 @@ website:   	http://www.themepunch.com
 .tp-caption.modern_medium_fat_white_on_black{
 			position: absolute; 
 			color: #fff;
-      background: #000; 
+      		background: #008500; 
 			text-shadow: none; 
 			font-weight: 800; 
 			font-size: 24px; 
@@ -403,7 +403,7 @@ website:   	http://www.themepunch.com
 			border-width: 0px; 
 			border-style: none; 
 			white-space:nowrap;		
-  padding:5px
+  			padding:5px
 		}
 
 					
