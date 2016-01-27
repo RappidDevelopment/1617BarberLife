@@ -78,7 +78,7 @@
 ================================================== */
 .instagram-section {
     min-height: 350px;
-    background:url('http://placehold.it/1100x800');
+    background:url('../images/home/3.jpg');
     background-attachment: fixed;
     background-size: cover;
 }

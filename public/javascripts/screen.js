@@ -288,7 +288,7 @@ $j(document).ready(function($) {
 	jQuery('#map').gMap({
 			 zoom: 14,
 			 scrollwheel:false,
-	markers: [{ latitude: 42.3605722, longitude: -71.0651046 }]  
+	markers: [{ latitude: 39.979360, longitude: -75.161696 }]  
 	});	
 	
 	// Back to Top
@@ -395,10 +395,7 @@ jQuery(window).load(function(){
 	
 	jQuery(".twitter-section").backstretch([
 		
-		"http://placehold.it/800x500",
-		"http://placehold.it/800x500/ffffff/111111",
-		"http://placehold.it/800x500",
-		"http://placehold.it/800x500/ffffff/111111"
+		"http://localhost:3000/images/home/4.jpg"
 
 	], {duration: 3000, fade: 750});
 
