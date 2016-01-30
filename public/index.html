@@ -519,11 +519,11 @@
           			<div class="widget-box">
               			<div class="widget-box-content">
                   			<h3>Walk-Ins Always Welcome!</h3>
-                  			<p><strong>A: 1617 Barber Shop &amp; Beauty Salon.</strong><br />
+                  			<p><strong>1617 Barber Shop &amp; Beauty Salon.</strong><br />
                   			1617 Cecil B. Moore Ave.<br />
                   			Phildelphia, PA 19121</p>
                   			<p>T: 215-868-9480</p>
-                        <p>H: 10 A.M. - P.M.</p>
+                        <p>H: 10 A.M. - 10 P.M.</p>
               			</div>
           			</div>
        			</aside><!-- /right column -->	
@@ -558,16 +558,18 @@
 	================================================== -->
     
 	<script src="javascripts/jquery-1.11.3.min.js"></script>
+  
   <!-- preloader -->
-	<script type="text/javascript">
+  <script type="text/javascript">
     jQuery(document).ready(function() {
-     jQuery("body").addClass("hidden_body");
-    })jQuery(window).load(function() { // makes sure the whole site is loaded
-      	jQuery("#status").fadeOut(); // will first fade out the loading animation
-        jQuery("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
-       jQuery("body").removeClass("hidden_body"); 
+      jQuery("body").addClass("hidden_body");
     })
-	</script>
+    jQuery(window).load(function() { // makes sure the whole site is loaded
+      jQuery("#status").fadeOut(); // will first fade out the loading animation
+      jQuery("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+      jQuery("body").removeClass("hidden_body"); 
+    })
+  </script>
 
   <!-- google map -->
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
