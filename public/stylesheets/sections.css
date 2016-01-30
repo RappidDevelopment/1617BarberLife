@@ -78,7 +78,7 @@
 ================================================== */
 .instagram-section {
     min-height: 350px;
-    background:url('../images/home/3.jpg');
+    background:url('../images/home/5.jpg');
     background-attachment: fixed;
     background-size: cover;
 }
@@ -86,9 +86,10 @@
 /* #Pricing Section
 ================================================== */
 .pricing-section {
-    background:url('http://placehold.it/1100x800');
+    background:url('../images/home/6.jpg');
     background-attachment: fixed;
     text-align: center;
+    background-size: cover;
 }
 
 .pricing-section .section-inner {
