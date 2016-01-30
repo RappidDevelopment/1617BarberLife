@@ -6,12 +6,12 @@
     -moz-transition: all .5s linear 0;
     -o-transition: all .5s linear 0;
     transition: all .5s linear 0;
-    color: #008500;
+    color: #fff;
     display: inline-block;
 }
 
 .home-full-screen .icon:hover {
-    color: #fff;
+    color: #008500;
     -webkit-transition: all .1s linear 0;
     -moz-transition: all .1s linear 0;
     -o-transition: all .1s linear 0;

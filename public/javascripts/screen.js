@@ -388,9 +388,9 @@ jQuery(window).load(function(){
 	jQuery(".home-section .home-full-screen").backstretch([
 	
 		"http://localhost:3000/images/home/1.jpg",
-		"http://localhost:3000/images/home/2.jpg",
 		"http://localhost:3000/images/home/3.jpg",
-		"http://localhost:3000/images/home/4.jpg"
+		"http://localhost:3000/images/home/4.jpg",
+		"http://localhost:3000/images/home/2.jpg"
 	], {duration: 3000, fade: 750});
 	
 	jQuery(".twitter-section").backstretch([
