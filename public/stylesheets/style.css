@@ -102,7 +102,7 @@
 ================================================== */
 
 body { 
-	font: 13px/21px 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 16px/21px 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background:url(../images/backgrounds/p2.png) 
 }
 
@@ -2162,7 +2162,7 @@ h4.staff-name {
 ================================================== */
 
 .serv, .services-section p {
-	text-align:center
+	text-align:left
 }
 
 .service h2 {
