@@ -529,14 +529,13 @@ jQuery(window).load(function() {
 	if ( Modernizr.touch ) {
 
 		jQuery("#testimonial-section").backstretch("http://placehold.it/1100x800");
-		jQuery("#instagram-section").backstretch("http://placehold.it/1100x800");
-		jQuery("#contact-section").backstretch("http://placehold.it/1100x800");
+		jQuery("#instagram-section").backstretch("/images/home/5.jpg");
 		jQuery("#blog-top-section").backstretch("http://placehold.it/1100x800");
 		jQuery("#blog-bot-section").backstretch("http://placehold.it/1100x800");
 		jQuery("#port-top-section").backstretch("http://placehold.it/1100x800");
 		jQuery("#port-bot-section").backstretch("http://placehold.it/1100x800");
 		jQuery("#facebook-section").backstretch("http://placehold.it/1100x800");
-		jQuery("#pricing-section").backstretch("http://placehold.it/1100x800");
+		jQuery("#pricing-section").backstretch("/images/home/6.jpg");
 		jQuery("#footer-social-section").backstretch("http://placehold.it/1100x800");
 		
 		jQuery('.demo-parallax-section-home1').backstretch("http://placehold.it/1100x800");
