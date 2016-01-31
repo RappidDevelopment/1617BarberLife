@@ -30,5 +30,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(app.get('port'), app.get('host'), function() {
-    console.log('1617 Barber Life has started listening at http://' + app.get('host') + ':' + app.get('port') + '. ^C to stop.');
+    console.log('1617BarberLife.com has started listening at http://' + app.get('host') + ':' + app.get('port') + '. ^C to stop.');
 });
