@@ -368,14 +368,11 @@ JQTWEET = {
 	$j('.insta').simpleInstagramFancybox({
 		captionOn : true,
 		mode : 'user',
-		accessToken : '19535683.5b9e1e6.8c67ca6d4995481594b9527e41191c0c', // Create your own access token here: http://bit.ly/10lin27
-		userID : '1138644', // Set your instagram user ID, get yours here: http://yvesvanbroekhoven.github.com/get-your-instagram-user-id/
+		accessToken : '444114566.5b9e1e6.a3cf29d3508b4ccdbcb6d71a0eee82ac', // Create your own access token here: http://bit.ly/10lin27
+		userID : '444114566', // Set your instagram user ID, get yours here: http://yvesvanbroekhoven.github.com/get-your-instagram-user-id/
 		numberOfImages: 20,
 		appearEffect : 'slide' // Allows you to set the effect used to show photos. Options include fade,slide,motion. 
 	});
-	
-	
-	
 
 var http = createRequestObject();
 var areal = Math.random() + "";
