@@ -1,9 +1,9 @@
 /**
-  * General setup of the web application. 
-  * Import express and other stand libraries 
+  * General setup of the web application.
+  * Import express and other stand libraries
   * to get up and running.
   */
-
+require('dotenv').config();
 var express  = require('express'),
     path     = require('path'),
     bodyParser = require('body-parser'),
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //support x-www-form-urlenco
 app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || 3000);
-app.set('host', 'localhost');
+app.set('host', process.env.HOST || 'localhost');
 
 app.get('/', function(req, res) {
   res.send('index.html');
