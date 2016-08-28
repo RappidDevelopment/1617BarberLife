@@ -27,8 +27,8 @@
     margin: 130px 0 40px;
 }
 
-.intro-text a,  a:visited { 
-    color:#fff; 
+.intro-text a,  a:visited {
+    color:#fff;
     text-decoration:none;
 }
 
@@ -78,7 +78,7 @@
 ================================================== */
 .instagram-section {
     min-height: 350px;
-    background:url('../images/home/5.jpg');
+    background:url('../images/home/3.jpg');
     background-attachment: fixed;
     background-size: cover;
 }
@@ -313,14 +313,14 @@
         font-size: 100px;
         margin-top: 130px;
     }
-    
+
     #home_parallax_intro1 li h2 {
         font-size: 70px;
         line-height: 70px;
         min-height: 100px;
         text-align: center;
     }
-    
+
     #home_parallax_intro1 li h2 span {
         font-size: 60px;
         position: relative;
@@ -335,13 +335,13 @@
         font-size: 80px;
         margin-top: 100px;
     }
-    
+
     #home_parallax_intro1 li h2 {
         font-size: 50px;
         line-height: 50px;
         min-height: 100px;
     }
-    
+
     #home_parallax_intro1 li h2 span {
         font-size: 40px;
         position: relative;
@@ -426,13 +426,13 @@
         text-align: center;
         margin-top: 50px;
     }
-    
+
     #home_parallax_intro2 li h2 span {
         font-size: 60px;
         position: relative;
         top: 10px;
     }
-    
+
     .welcome-title h1 {
         font-size: 70px;
         line-height: 90px;
@@ -449,13 +449,13 @@
         min-height: 100px;
         margin-top: 40px;
     }
-    
+
     #home_parallax_intro2 li h2 span {
         font-size: 40px;
         position: relative;
         top: 8px;
     }
-    
+
     .welcome-title h1 {
         font-size: 50px;
         line-height: 90px;
@@ -510,7 +510,7 @@
         min-height: 100px;
         margin-top: 50px;
     }
-    
+
     #home_parallax_intro3 li h2 span {
         font-size: 60px;
         position: relative;
@@ -530,7 +530,7 @@
         min-height: 100px;
         margin-top: 50px;
     }
-    
+
     #home_parallax_intro3 li h2 span {
         font-size: 40px;
         position: relative;
@@ -579,9 +579,9 @@
 
 a.intro-button {
 	width:100%;
-	padding:30px; 
-	font-size:35px; 
-	margin-top:50px 
+	padding:30px;
+	font-size:35px;
+	margin-top:50px
 }
 
 /* #Home Parallax Section 5 Newsletter Signup
@@ -705,12 +705,12 @@ a.intro-button {
         line-height: 90px;
         margin-top: 100px;
     }
-    
+
     .intro-form-wrap .stage {
         float: none;
         margin-bottom: 8px;
     }
-    
+
     .intro-form-wrap input[type=text],.intro-form-wrap input[type=button] {
         width: 300px !important;
         max-width: 300px !important;
@@ -725,12 +725,12 @@ a.intro-button {
         line-height: 90px;
         margin-top: 80px;
     }
-    
+
     .intro-form-wrap .stage {
         float: none;
         margin-bottom: 8px;
     }
-    
+
     .intro-form-wrap input[type=text],.intro-form-wrap input[type=button] {
         width: 250px !important;
         max-width: 250px !important;
@@ -738,7 +738,7 @@ a.intro-button {
 
 }
 
-/* #Parallax Sections 
+/* #Parallax Sections
 ================================================== */
 .demo-home-logo {
     margin-top: 200px;
