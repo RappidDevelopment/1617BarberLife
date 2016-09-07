@@ -25,6 +25,8 @@ app.use(bodyParser.json());
 app.set('port', process.env.PORT || 3000);
 app.set('host', process.env.HOST || 'localhost');
 
+app.disable('x-powered-by');
+
 app.get('/', function(req, res) {
   res.send('index.html');
 });
