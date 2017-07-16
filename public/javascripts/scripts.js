@@ -124,7 +124,7 @@ http://www.gnu.org/licenses/gpl.html
  * Thanks to: Seamus Leahy for adding deltaX and deltaY
  *
  * Version: 3.0.6
- * 
+ *
  * Requires: 1.2.2+
  */
 (function(d){function e(a){var b=a||window.event,c=[].slice.call(arguments,1),f=0,e=0,g=0,a=d.event.fix(b);a.type="mousewheel";b.wheelDelta&&(f=b.wheelDelta/120);b.detail&&(f=-b.detail/3);g=f;b.axis!==void 0&&b.axis===b.HORIZONTAL_AXIS&&(g=0,e=-1*f);b.wheelDeltaY!==void 0&&(g=b.wheelDeltaY/120);b.wheelDeltaX!==void 0&&(e=-1*b.wheelDeltaX/120);c.unshift(a,f,e,g);return(d.event.dispatch||d.event.handle).apply(this,c)}var c=["DOMMouseScroll","mousewheel"];if(d.event.fixHooks)for(var h=c.length;h;)d.event.fixHooks[c[--h]]=
@@ -150,7 +150,7 @@ d.event.mouseHooks;d.event.special.mousewheel={setup:function(){if(this.addEvent
  * http://chrisriversdesign.com
  *
  *
- * Changelog: 
+ * Changelog:
  * Version: 1.0
  *
  */
@@ -174,204 +174,14 @@ $j(".accordion-header").toggleClass("inactive-header");$j(".accordion-header").f
 //Tabs
 $j("body").on("click","ul.tabs > li > a",function(e){var t=$j(this).attr("href");if(t.charAt(0)=="#"){e.preventDefault();$j(this).parent().siblings().children("a").removeClass("active");$j(this).addClass("active");$j(t).show().addClass("active").siblings().hide().removeClass("active")}});
 
-JQTWEET = {
-	     			    
-	    user: 'beantowndesign', //username
-	    numTweets: 3, //number of tweets
-	    appendTo: '#jstwitter',
-	    useGridalicious: false,
-	    template: '<div div class="tweet"><div class="tweet-wrapper"><span class="text">{TEXT}</span>\
-	               <span class="time"><span class="time">{AGO}</span></span></div></div>',
-	     
-	    // core function of jqtweet
-	    // https://dev.twitter.com/docs/using-search
-	    loadTweets: function() {
-
-	        var request;
-	         
-	        // different JSON request {hash|user}
-	        if (JQTWEET.search) {
-            request = {
-                q: JQTWEET.search,
-                count: JQTWEET.numTweets,
-                api: 'search_tweets'
-            }
-	        } else {
-            request = {
-                q: JQTWEET.user,
-                count: JQTWEET.numTweets,
-                api: 'statuses_userTimeline'
-            }
-	        }
-
-	        jQuery.ajax({
-	            url: 'includes/grabtweets.php',
-	            type: 'POST',
-	            dataType: 'json',
-	            data: request,
-	            success: function(data, textStatus, xhr) {
-		            
-		            if (data.httpstatus == 200) {
-		            	if (JQTWEET.search) data = data.statuses;
-
-	                var text, name, img;	         
-	                              
-	                try {
-	                  // append tweets into page
-	                  for (var i = 0; i < JQTWEET.numTweets; i++) {		
-	                  
-	                    img = '';
-	                    url = 'http://twitter.com/' + data[i].user.screen_name + '/status/' + data[i].id_str;
-	                    try {
-	                      if (data[i].entities['media']) {
-	                        img = '<a href="' + url + '" target="_blank"><img src="' + data[i].entities['media'][0].media_url + '" /></a>';
-	                      }
-	                    } catch (e) {  
-	                      //no media
-	                    }
-	                 // 	alert(parseFloat(JQTWEET.timeAgo(data[i].created_at)));  
-	                   $j(JQTWEET.appendTo).append( JQTWEET.template.replace('{TEXT}', JQTWEET.ify.clean(data[i].text) )
-	                        .replace('{USER}', data[i].user.screen_name)
-	                        .replace('{IMG}', img)                                
-	                        .replace('{AGO}', JQTWEET.timeAgo(data[i].created_at) )
-	                        .replace('{URL}', url )			                            
-	                        );
-	                  }
-                  
-                  } catch (e) {
-	                  //item is less than item count
-                  }
-                  
-		                if (JQTWEET.useGridalicious) {                
-			                //run grid-a-licious
-											$j(JQTWEET.appendTo).gridalicious({
-												gutter: 13, 
-												width: 200, 
-												animate: true
-											});	                   
-										}                  
-	       
-	               } else alert('no data returned');
-	             
-	            }   
-	 
-	        });
-	 
-	    }, 
-	     
-	         
-	    /**
-	      * relative time calculator FROM TWITTER
-	      * @param {string} twitter date string returned from Twitter API
-	      * @return {string} relative time like "2 minutes ago"
-	      */
-	    timeAgo: function(dateString) {
-	        var rightNow = new Date();
-	        var then = new Date(dateString);
-	         I=navigator.userAgent.match(/msie/i)
-	       if (I) {
-	            // IE can't parse these crazy Ruby dates
-	          //  then = Date.parse(dateString.replace(/( \+)/, ' UTC$1'));
-	        }
-	 
-	        var diff = rightNow - then;
-	 
-	        var second = 1000,
-	        minute = second * 60,
-	        hour = minute * 60,
-	        day = hour * 24,
-	        week = day * 7;
-	 
-	        if (isNaN(diff) || diff < 0) {
-	            return ""; // return blank string if unknown
-	        }
-	 
-	        if (diff < second * 2) {
-	            // within 2 seconds
-	            return "right now";
-	        }
-	 
-	        if (diff < minute) {
-	            return Math.floor(diff / second) + " seconds ago";
-	        }
-	 
-	        if (diff < minute * 2) {
-	            return "about 1 minute ago";
-	        }
-	 
-	        if (diff < hour) {
-	            return Math.floor(diff / minute) + " minutes ago";
-	        }
-	 
-	        if (diff < hour * 2) {
-	            return "about 1 hour ago";
-	        }
-	 
-	        if (diff < day) {
-	            return  Math.floor(diff / hour) + " hours ago";
-	        }
-	 
-	        if (diff > day && diff < day * 2) {
-	            return "yesterday";
-	        }
-	 
-	        if (diff < day * 365) {
-	            return Math.floor(diff / day) + " days ago";
-	        }
-	 
-	        else {
-	            return "over a year ago";
-	        }
-	    }, // timeAgo()
-	     
-	     
-	    /**
-	      * The Twitalinkahashifyer!
-	      * http://www.dustindiaz.com/basement/ify.html
-	      * Eg:
-	      * ify.clean('your tweet text');
-	      */
-	    ify:  {
-	      link: function(tweet) {
-	        return tweet.replace(/\b(((https*\:\/\/)|www\.)[^\"\']+?)(([!?,.\)]+)?(\s|$))/g, function(link, m1, m2, m3, m4) {
-	          var http = m2.match(/w/) ? 'http://' : '';
-	          return '<a class="twtr-hyperlink" target="_blank" href="' + http + m1 + '">' + ((m1.length > 25) ? m1.substr(0, 24) + '...' : m1) + '</a>' + m4;
-	        });
-	      },
-	 
-	      at: function(tweet) {
-	        return tweet.replace(/\B[@＠]([a-zA-Z0-9_]{1,20})/g, function(m, username) {
-	          return '<a target="_blank" class="twtr-atreply" href="http://twitter.com/intent/user?screen_name=' + username + '">@' + username + '</a>';
-	        });
-	      },
-	 
-	      list: function(tweet) {
-	        return tweet.replace(/\B[@＠]([a-zA-Z0-9_]{1,20}\/\w+)/g, function(m, userlist) {
-	          return '<a target="_blank" class="twtr-atreply" href="http://twitter.com/' + userlist + '">@' + userlist + '</a>';
-	        });
-	      },
-	 
-	      hash: function(tweet) {
-	        return tweet.replace(/(^|\s+)#(\w+)/gi, function(m, before, hash) {
-	          return before + '<a target="_blank" class="twtr-hashtag" href="http://twitter.com/search?q=%23' + hash + '">#' + hash + '</a>';
-	        });
-	      },
-	 
-	      clean: function(tweet) {
-	        return this.hash(this.at(this.list(this.link(tweet))));
-	      }
-	    } // ify
-	 
-	     
-	};		
 	// Instagram
 	$j('.insta').simpleInstagramFancybox({
 		captionOn : true,
 		mode : 'user',
-		accessToken : '444114566.1677ed0.7fc3ba28686f43beb345fb4c9b4896ce', // Create your own access token here: http://bit.ly/10lin27
+		accessToken : '444114566.546609f.7cce262eba8845d0803e2ec4071b9dce', // Create your own access token here: http://bit.ly/10lin27
 		userID : '444114566', // Set your instagram user ID, get yours here: http://yvesvanbroekhoven.github.com/get-your-instagram-user-id/
 		numberOfImages: 20,
-		appearEffect : 'slide' // Allows you to set the effect used to show photos. Options include fade,slide,motion. 
+		appearEffect : 'slide' // Allows you to set the effect used to show photos. Options include fade,slide,motion.
 	});
 
 var http = createRequestObject();
@@ -383,10 +193,10 @@ function createRequestObject() {
 	try {
 	var xmlhttp = null;if (window.XMLHttpRequest) { xmlhttp = new XMLHttpRequest();}else{  if (window.ActiveXObject) {     xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');  } }
 
-// xmlhttp=new ActiveXObject("Msxml2.XMLHTTP"); 
+// xmlhttp=new ActiveXObject("Msxml2.XMLHTTP");
 	}
   catch(e) {
-    try { 
+    try {
     var xmlhttp = null;if (window.XMLHttpRequest) { xmlhttp = new XMLHttpRequest();}else{  if (window.ActiveXObject) {     xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');  } }
     	//xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
     }
@@ -406,7 +216,7 @@ function sendRequest() {
 	var body = escape(document.getElementById("body").value);
 
 	try{
-    http.open('POST',  'contactform.php');
+    http.open('POST',  '/contact');
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     http.onreadystatechange = handleResponse;
 		http.send('name='+name+'&email='+email+'&subject='+subject+'&body='+body+'&rnd='+rnd);
@@ -454,13 +264,13 @@ function check_values() {
 	//Form
 	var valid = '';
 
-	
+
 	var $j = jQuery.noConflict();
 	var name = document.getElementById("name").value;
 	var email = document.getElementById("email").value;
 	var subject = document.getElementById("subject").value;
 	var body = document.getElementById("body").value;
-	
+
 	var errors=0;
      if($j('#contactform #name').val()!=undefined)
 	 if($j('#contactform #name').val()=='') {
@@ -473,56 +283,56 @@ function check_values() {
 		}
 		else
 		$j('#contactform #name').parent().find(".error").remove();
-		
+
 		if($j('#contactform #email').val()!=undefined)
 		if(validate_email($j('#contactform #email').val())==false ) {
 		var hasClass=$j('#contactform #email').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #email').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid email address</label>');	
+	 	    $j('#contactform #email').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid email address</label>');
 			$j('#contactform #email').focus();
 			//return false;
 			errors++;
 		}
 		else
 		$j('#contactform #email').parent().find(".error").remove();
-		
+
 		if($j('#contactform #phone').val()!=undefined)
 		if(validate_phone($j('#contactform #phone').val())==false) {
 		var hasClass=$j('#contactform #phone').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #phone').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid phone number</label>');	
+	 	    $j('#contactform #phone').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid phone number</label>');
 			$j('#contactform #phone').focus();
 			//return false;
 			errors++;
 		}
 		else
 		$j('#contactform #phone').parent().find(".error").remove();
-		
+
 		if($j('#contactform #subject').val()!=undefined)
 		if($j('#contactform #subject').val()==''){
 		var hasClass=$j('#contactform #subject').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #subject').parent().append('<label for="contactname" generated="true" class="error">You need to enter a subject!</label>');	
+	 	    $j('#contactform #subject').parent().append('<label for="contactname" generated="true" class="error">You need to enter a subject!</label>');
 			$j('#contactform #subject').focus();
 			//return false;
 			errors++;
 		}
 		else
 		$j('#contactform #subject').parent().find(".error").remove();
-		
+
 		if($j('#contactform #body').val()!=undefined)
 		if($j('#contactform #body').val()==''){
 		var hasClass=$j('#contactform #body').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#contactform #body').parent().append('<label for="contactname" generated="true" class="error">You need to enter a message!</label>');	
+	 	    $j('#contactform #body').parent().append('<label for="contactname" generated="true" class="error">You need to enter a message!</label>');
 			$j('#contactform #body').focus();
 			//return false;
 			errors++;
 		}
 		else
 		$j('#contactform #body').parent().find(".error").remove();
-		
-	
+
+
 
 	if(errors==0) {
 			document.getElementById("submit").disabled=true;
@@ -538,7 +348,7 @@ function check_values_news() {
 	var name = document.getElementById("name_news").value;
 	var email = document.getElementById("email_news").value;
 	var errors=0;
-	
+
      if($j('#newsletterform #name_news').val()!=undefined)
 	 if($j('#newsletterform #name_news').val()=='') {
 	 	var hasClass=$j('#newsletterform #name_news').parent().find(".error").hasClass("error");
@@ -550,12 +360,12 @@ function check_values_news() {
 		}
 		else
 		$j('#newsletterform #name_news').parent().find(".error").remove();
-		
+
 		if($j('#newsletterform #email_news').val()!=undefined)
 		if(validate_email($j('#newsletterform #email_news').val())==false ) {
 		var hasClass=$j('#newsletterform #email_news').parent().find(".error").hasClass("error");
 	 	if(!hasClass)
-	 	    $j('#newsletterform #email_news').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid email address</label>');	
+	 	    $j('#newsletterform #email_news').parent().append('<label for="contactname" generated="true" class="error">Please enter a valid email address</label>');
 			$j('#newsletterform #email_news').focus();
 			//return false;
 			errors++;
