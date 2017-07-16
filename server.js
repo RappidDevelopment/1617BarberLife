@@ -9,6 +9,10 @@ var express  = require('express'),
     bodyParser = require('body-parser'),
     app = express();
 
+var nodemailer = require('nodemailer');
+var sparkPostTransport = require('nodemailer-sparkpost-transport');
+var transporter = nodemailer.createTransport(sparkPostTransport({sparkPostApiKey: process.env.SPARKPOST_API_KEY}))
+
 /**
   * Set EJS template Engine
   * EJS let's us use variables in-line
@@ -29,6 +33,27 @@ app.disable('x-powered-by');
 
 app.get('/', function(req, res) {
   res.send('index.html');
+});
+
+app.post('/contact', function(req, res) {
+  transporter.sendMail({
+    from: 'headquarters@rappiddevelopment.com',
+    to: 'matt@rappiddevelopment.com',
+    subject: 'New Message From 1617 Website',
+    text: '',
+    html: 'New message from the 1617 website: <br/>' +
+      'Name: ' + req.body.name + '<br/>' +
+      'E-mail: ' + req.body.email + '<br/>' +
+      'Subject: ' + req.body.subject + '<br/>' +
+      'Message: ' + req.body.body + '<br/>'
+  }, function(err, info) {
+    if (err) {
+      console.log('Error: ' + err);
+      res.send(401, 'There was a problem sending your email.')
+    } else {
+      res.send(200);
+    }
+  });
 });
 
 app.listen(app.get('port'), app.get('host'), function() {
