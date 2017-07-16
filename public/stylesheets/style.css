@@ -1717,7 +1717,6 @@ ul.pagination li a:visited {
 ul.pagination li a:hover,
 ul.pagination li.current-page a {
   display: inline-block;
-  color: #ff000;
   background: #181818;
   color: #fff;
   text-align: center;
@@ -1840,7 +1839,6 @@ ul.pagination li.current-page a {
 .comment-info,
 .comment-content {
   display: inline;
-  float: left;
   margin-left: 0;
   margin-right: 0px;
 }
@@ -1986,10 +1984,12 @@ div.port-item-container:hover .zoom {
   -webkit-animation: fadeIn 2s;
   -moz-animation: fadeIn 2s;
   -ms-animation: fadeIn 2s;
+  animation: fadeIn 2s;
   opacity: 1;
   -o-transition-duration: 2s;
-  -moz-transition-duration: 0s;
-  -webkit-transition: -webkit-transform 2s;
+  -moz-transition-duration: 2s;
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
 }
 
 .port-item-container .zoom-inner {
@@ -2540,7 +2540,6 @@ div.service:hover .icon {
   border: 0;
   padding: 0;
   margin: 0;
-  vertical-align: top;
 }
 
 .fancybox-image {
@@ -2863,9 +2862,6 @@ ul.tabs li:first-child a {
   border-width: 2px 2px 1px 2px;
 }
 
-ul.tabs li:last-child a {
-}
-
 ul.tabs-content {
   margin: 0;
   display: block;
@@ -2998,9 +2994,18 @@ ul.tabs {
     transparent 75%,
     transparent
   );
-
+  animation: animate-stripes 3s linear infinite;
   -webkit-animation: animate-stripes 3s linear infinite;
   -moz-animation: animate-stripes 3s linear infinite;
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 0;
+  }
 }
 
 @-webkit-keyframes animate-stripes {
@@ -3037,9 +3042,23 @@ ul.tabs {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-
+  animation: animate-shine 2s ease-out infinte;
   -webkit-animation: animate-shine 2s ease-out infinite;
   -moz-animation: animate-shine 2s ease-out infinite;
+}
+
+@keyframes animate-shine {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+    width: 95%;
+  }
 }
 
 @-webkit-keyframes animate-shine {
@@ -3074,9 +3093,21 @@ ul.tabs {
   -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
   -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
   box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
-
+  animation: animate-glow 1s ease-out infinte;
   -webkit-animation: animate-glow 1s ease-out infinite;
   -moz-animation: animate-glow 1s ease-out infinite;
+}
+
+@keyframes animate-glow {
+  0% {
+    -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+  }
+  50% {
+    -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;
+  }
+  100% {
+    -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+  }
 }
 
 @-webkit-keyframes animate-glow {
@@ -3691,7 +3722,6 @@ ul.pagination li a:focus {
   padding-left: 15px;
   letter-spacing: -4px;
   font-family: 'BebasNeueRegular', Arial, sans-serif;
-  float: left;
   position: absolute;
   top: 15px;
   right: -18px;
@@ -3738,7 +3768,7 @@ ul.pagination li a:focus {
   font-weight: normal;
   color: #fff;
   padding: 5px 0 5px 10px;
-  border-left: 4px solid #ff000;
+  border-left: 4px solid #fff;
   background: rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   font-size: 24px;
