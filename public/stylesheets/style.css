@@ -365,8 +365,14 @@ div.port-item-title p {
 /* #Margin and Padding
 ================================================== */
 .very-top-padding {
-  padding-top: 55px;
+  padding-top: 35px;
 }
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .very-top-padding {
+    padding-top: 15px;
+  }
+}
+
 .m0 {
   margin: 0 !important;
 }
