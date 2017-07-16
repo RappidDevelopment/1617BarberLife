@@ -300,6 +300,7 @@ p a:visited {
 ul,
 ol {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 ul {
   list-style: none outside;

@@ -360,7 +360,15 @@ $j(document).ready(function($) {
   jQuery(window).load(function() {
     //Full screen slideshows or images - backstretch
     jQuery(".home-section .home-full-screen").backstretch(
-      ["/images/home/1.jpg", "/images/home/3.jpg", "/images/home/4.jpg", "/images/home/2.jpg"],
+      [
+        "/images/home/1.jpg",
+        "/images/home/11.jpg",
+        "/images/home/3.jpg",
+        "/images/home/10.jpg",
+        "/images/home/4.jpg",
+        "/images/home/12.jpg",
+        "/images/home/13.jpg"
+      ],
       { duration: 3000, fade: 750 }
     );
 
