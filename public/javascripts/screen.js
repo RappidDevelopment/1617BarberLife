@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j(document).ready(function($) {
+$j(document).ready(function ($) {
   //Portfolio
   var $container = $j("#portfolio-content");
   var toFilter = "*";
@@ -18,7 +18,7 @@ $j(document).ready(function($) {
 
   checkActive();
 
-  jQuery("#navsort a").click(function() {
+  jQuery("#navsort a").click(function () {
     var title = jQuery(this).attr("title");
     var text = jQuery(this).text();
     if (text == "All") {
@@ -44,7 +44,7 @@ $j(document).ready(function($) {
   });
 
   function checkActive() {
-    jQuery("#navsort a").each(function() {
+    jQuery("#navsort a").each(function () {
       jQuery(this).parent().removeClass("selected");
 
       var title = jQuery(this).attr("title");
@@ -187,7 +187,13 @@ $j(document).ready(function($) {
   //Fancybox
   jQuery(".fancybox,a.instagram-photo").fancybox({
     openEffect: "elastic",
-    helpers: { overlay: { css: { background: "rgba(0, 0,0, 0.8)" } } }
+    helpers: {
+      overlay: {
+        css: {
+          background: "rgba(0, 0,0, 0.8)"
+        }
+      }
+    }
   });
 
   //Fancybox Other
@@ -201,18 +207,29 @@ $j(document).ready(function($) {
     closeClick: false,
     openEffect: "elastic",
     closeEffect: "none",
-    helpers: { overlay: { css: { background: "rgba(0, 0,0, 0.8)" } } }
+    helpers: {
+      overlay: {
+        css: {
+          background: "rgba(0, 0,0, 0.8)"
+        }
+      }
+    }
   });
-  jQuery(".fancybox-gallery").click(function() {
+  jQuery(".fancybox-gallery").click(function () {
     jQuery.fancybox(
-      ["images/placeholders/800x530.gif", "images/placeholders/800x530.gif", "images/placeholders/800x530.gif"],
-      {
+      ["images/placeholders/800x530.gif", "images/placeholders/800x530.gif", "images/placeholders/800x530.gif"], {
         padding: 0,
         transitionIn: "none",
         transitionOut: "none",
         type: "image",
         changeFade: 0,
-        helpers: { overlay: { css: { background: "rgba(0, 0,0, 0.8)" } } }
+        helpers: {
+          overlay: {
+            css: {
+              background: "rgba(0, 0,0, 0.8)"
+            }
+          }
+        }
       }
     );
   });
@@ -223,7 +240,13 @@ $j(document).ready(function($) {
     autoSize: false,
     openEffect: "elastic",
     closeEffect: "none",
-    helpers: { overlay: { css: { background: "rgba(0, 0,0, 0.8)" } } }
+    helpers: {
+      overlay: {
+        css: {
+          background: "rgba(0, 0,0, 0.8)"
+        }
+      }
+    }
   });
   jQuery(".fancybox-inline").fancybox({
     width: 600,
@@ -232,7 +255,13 @@ $j(document).ready(function($) {
     openEffect: "elastic",
     closeEffect: "none",
     autoDimensions: false,
-    helpers: { overlay: { css: { background: "rgba(0, 0,0, 0.8)" } } }
+    helpers: {
+      overlay: {
+        css: {
+          background: "rgba(0, 0,0, 0.8)"
+        }
+      }
+    }
   });
   jQuery(".fancybox-flash").fancybox({
     padding: 0,
@@ -241,9 +270,22 @@ $j(document).ready(function($) {
     transitionOut: "none",
     width: 680,
     height: 495,
-    helpers: { overlay: { css: { background: "rgba(0, 0,0, 0.8)" } } }
+    helpers: {
+      overlay: {
+        css: {
+          background: "rgba(0, 0,0, 0.8)"
+        }
+      }
+    }
   });
-  jQuery("#map-1").gMap({ scrollwheel: true, zoom: 14, markers: [{ latitude: 42.3676, longitude: -71.0705 }] });
+  jQuery("#map-1").gMap({
+    scrollwheel: true,
+    zoom: 14,
+    markers: [{
+      latitude: 42.3676,
+      longitude: -71.0705
+    }]
+  });
 
   //Navigation
 
@@ -263,14 +305,17 @@ $j(document).ready(function($) {
   jQuery("#map").gMap({
     zoom: 14,
     scrollwheel: false,
-    markers: [{ latitude: 39.97936, longitude: -75.161696 }]
+    markers: [{
+      latitude: 39.97936,
+      longitude: -75.161696
+    }]
   });
 
   // Back to Top
   jQuery("#back-top").hide();
 
   // fade in #back-top
-  jQuery(window).scroll(function() {
+  jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() > 100) {
       jQuery("#back-top").fadeIn();
     } else {
@@ -279,9 +324,8 @@ $j(document).ready(function($) {
   });
 
   // scroll body to 0px on click
-  jQuery("#back-top a").click(function() {
-    jQuery("body,html").animate(
-      {
+  jQuery("#back-top a").click(function () {
+    jQuery("body,html").animate({
         scrollTop: 0
       },
       800
@@ -296,7 +340,7 @@ $j(document).ready(function($) {
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function() {
+    scrollItems = menuItems.map(function () {
       var hrf = jQuery(this).attr("href");
       if (hrf.charAt(0) == "#") {
         var item = jQuery(hrf);
@@ -313,7 +357,7 @@ $j(document).ready(function($) {
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function() {
+    scrollItems = menuItems.map(function () {
       var hrf = jQuery(this).attr("href");
       if (hrf.charAt(0) == "#") {
         var item = jQuery(hrf);
@@ -325,11 +369,10 @@ $j(document).ready(function($) {
 
   // Bind click handler to menu items
   // so we can get a fancy scroll animation
-  menuItems.click(function(e) {
+  menuItems.click(function (e) {
     var href = jQuery(this).attr("href"),
       offsetTop = href === "#" ? 0 : jQuery(href).offset().top - topMenuHeight + 1;
-    jQuery("html, body").stop().animate(
-      {
+    jQuery("html, body").stop().animate({
         scrollTop: offsetTop
       },
       ""
@@ -338,12 +381,12 @@ $j(document).ready(function($) {
   });
 
   // Bind to scroll
-  jQuery(window).scroll(function() {
+  jQuery(window).scroll(function () {
     // Get container scroll position
     var fromTop = jQuery(this).scrollTop() + topMenuHeight;
 
     // Get id of current scroll item
-    var cur = scrollItems.map(function() {
+    var cur = scrollItems.map(function () {
       if (jQuery(this).offset().top < fromTop) return this;
     });
     // Get the id of the current element
@@ -357,22 +400,32 @@ $j(document).ready(function($) {
     }
   });
 
-  jQuery(window).load(function() {
+  jQuery(window).load(function () {
     //Full screen slideshows or images - backstretch
     jQuery(".home-section .home-full-screen").backstretch(
       [
         "/images/home/1.jpg",
-        "/images/home/11.jpg",
+        "/images/home/2.jpg",
         "/images/home/3.jpg",
-        "/images/home/10.jpg",
         "/images/home/4.jpg",
+        "/images/home/5.jpg",
+        "/images/home/6.jpg",
+        "/images/home/7.jpg",
+        "/images/home/8.jpg",
+        "/images/home/9.jpg",
+        "/images/home/10.jpg",
+        "/images/home/11.jpg",
         "/images/home/12.jpg",
-        "/images/home/13.jpg"
-      ],
-      { duration: 3000, fade: 750 }
+      ], {
+        duration: 3000,
+        fade: 750
+      }
     );
 
-    jQuery(".twitter-section").backstretch(["/images/home/4.jpg"], { duration: 3000, fade: 750 });
+    jQuery(".twitter-section").backstretch(["/images/home/4.jpg"], {
+      duration: 3000,
+      fade: 750
+    });
   });
 
   // TinyNav.js 1
@@ -386,7 +439,7 @@ $j(document).ready(function($) {
 var tpj = jQuery;
 tpj.noConflict();
 
-tpj(window).load(function() {
+tpj(window).load(function () {
   if (tpj.fn.cssOriginal != undefined) tpj.fn.css = tpj.fn.cssOriginal;
 
   //	if (typeof(revolution) == 'function'){
@@ -474,7 +527,7 @@ tpj(window).load(function() {
   }
 });
 
-jQuery(window).load(function() {
+jQuery(window).load(function () {
   //Detect if mobile (touch) because parallax doesn't work on mobile, use backstretch instead
   //Display select nav on touch devices
   if (Modernizr.touch) {
