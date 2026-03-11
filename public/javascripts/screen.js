@@ -278,15 +278,6 @@ $j(document).ready(function ($) {
       }
     }
   });
-  jQuery("#map-1").gMap({
-    scrollwheel: true,
-    zoom: 14,
-    markers: [{
-      latitude: 42.3676,
-      longitude: -71.0705
-    }]
-  });
-
   //Navigation
 
   jQuery(".level-1 li").append("<span>*</span>");
@@ -299,16 +290,6 @@ $j(document).ready(function ($) {
     nav: true,
     speed: 500,
     namespace: "callbacks"
-  });
-
-  //Contact Map
-  jQuery("#map").gMap({
-    zoom: 14,
-    scrollwheel: false,
-    markers: [{
-      latitude: 39.97936,
-      longitude: -75.161696
-    }]
   });
 
   // Back to Top
